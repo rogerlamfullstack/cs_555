@@ -1,14 +1,14 @@
 # Apply K-Means clustering
 from sklearn.cluster import KMeans, DBSCAN
 from sklearn.metrics import silhouette_score, calinski_harabasz_score, davies_bouldin_score, adjusted_rand_score
-from preprocessing import * # Assuming this imports X and num_unique_emotions
+from preprocessingv2 import * # Assuming this imports X and num_unique_emotions
 
 # Ensure X is loaded and num_unique_emotions is defined from preprocessing.py
 # For demonstration purposes, let's assume X is already a sparse matrix
 # and num_unique_emotions is an integer.
 
 # K-Means clustering
-kmeans = KMeans(n_clusters=num_unique_emotions, random_state=42)
+kmeans = KMeans(n_clusters=7, random_state=42)
 kmeans_labels = kmeans.fit_predict(X)
 
 # Convert the sparse matrix X to a dense array for evaluation metrics
