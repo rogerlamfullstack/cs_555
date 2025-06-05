@@ -4,7 +4,7 @@ from sklearn.cluster import DBSCAN
 from sklearn.metrics import silhouette_score, calinski_harabasz_score, davies_bouldin_score, adjusted_rand_score
 
 
-dbscan = DBSCAN(eps=0.5, min_samples=5)
+dbscan = DBSCAN(eps=0.15, min_samples=5)
 dbscan_labels = dbscan.fit_predict(X)
 
 # Evaluate DBSCAN using different metrics
