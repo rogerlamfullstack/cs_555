@@ -79,16 +79,16 @@ n_noise = list(labels_dbscan).count(-1)
 print(f"Number of clusters: {n_clusters}")
 print(f"Number of noise points: {n_noise}")
 print("Cluster labels:", labels_dbscan)
-from sklearn.manifold import TSNE
-import matplotlib.pyplot as plt
-tsne = TSNE(n_components=2)
-X_tsne = tsne.fit_transform(X_np)
+# from sklearn.manifold import TSNE
+# import matplotlib.pyplot as plt
+# tsne = TSNE(n_components=2)
+# X_tsne = tsne.fit_transform(X_np)
 
-plt.figure(figsize=(10, 7))
-plt.scatter(X_tsne[:, 0], X_tsne[:, 1], c=labels_dbscan, cmap='viridis', marker='o')
-plt.colorbar(label='Cluster Label')
-plt.title("DBSCAN Clustering (t-SNE visualization)")
-plt.show()
+# plt.figure(figsize=(10, 7))
+# plt.scatter(X_tsne[:, 0], X_tsne[:, 1], c=labels_dbscan, cmap='viridis', marker='o')
+# plt.colorbar(label='Cluster Label')
+# plt.title("DBSCAN Clustering (t-SNE visualization)")
+# plt.show()
 # Remove noise points (-1) for evaluation
 mask = labels_dbscan != -1
 if np.sum(mask) > 0 and len(set(labels_dbscan[mask])) > 1:
